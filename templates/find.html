@@ -30,6 +30,16 @@
 				</p>
 			{% endif %}
 			
+			{% if message_length < 5 %}
+				<p style="font-size:35px" class="w3-center" >
+					<i class=" fa fa-frown-o"></i>
+				</p>
+				<p  style="font-size:35px" class="w3-center" >
+					The sentence is too short. Try Again!!
+				</p>
+				
+			{% endif %}
+			
 			{% if lang != 'Unknown' %}
 				<div class="container">
 					<div class="w3-third">
