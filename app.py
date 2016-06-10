@@ -23,8 +23,8 @@ def result():
         data = str(request.form['word'])
         data_len = len(data)
         get1, get2, get3 = cld2.detect(data)
-        reliability = (get1)
-        lang = (get3[0][0])
+        reliability = get1
+        lang = get3[0][0]
         match = ('{0:.4f} %'.format(get3[0][2]))
         output = {'reliablity': reliability, 'lang': lang, 'match': match, 'message_length': data_len }
         return render_template('find.html', **output)
@@ -38,8 +38,8 @@ def apiResult(sentence):
     cleanSentence = sentence.split('+')
     cleanSentence = ' '.join(cleanSentence)
     get1, get2, get3 = cld2.detect(sentence)
-    reliability = (get1)
-    lang = (get3[0][0])
+    reliability = get1
+    lang = get3[0][0]
     match = ('{0:.4f} %'.format(get3[0][2]))
     output = {'reliablity': reliability, 'lang': lang, 'match': match}
     return jsonify(output)
